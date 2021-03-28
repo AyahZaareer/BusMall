@@ -1,0 +1,23 @@
+h1
+{
+    font-size: 90px;
+    color: crimson;
+    text-align: center;
+}
+img
+{margin-left: 100px;
+    width: 20%;
+    padding: 20px;
+}
+li
+{
+    font-size: 50px;
+    margin-left: 20px;
+    padding: 20px;
+}
+#result
+{
+    width: 20%;
+    height: 20%;
+    font-size: 50px;
+}
