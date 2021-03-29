@@ -1,7 +1,7 @@
 h1
 {
     font-size: 90px;
-    color: crimson;
+    color: rgb(220, 77, 20);
     text-align: center;
 }
 img
@@ -21,7 +21,7 @@ li
 {
     width: 20%;
     height: 20%;
-    font-size: 50px;
+    font-size: 40px;
 }
 #images-section
 {
