@@ -6,7 +6,8 @@ h1
 }
 img
 {margin-left: 100px;
-    width: 15%;
+    width: 200px;
+    height: 200px;
     padding: 20px;
     display: inline-block;
 }
@@ -21,4 +22,8 @@ li
     width: 20%;
     height: 20%;
     font-size: 50px;
+}
+#images-section
+{
+    margin: 155px;
 }
