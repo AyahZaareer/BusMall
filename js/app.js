@@ -27,6 +27,22 @@ function ProductsMall(name) {
   ProductsMall.all.push(this);
 }
 ProductsMall.all = [];
+function settingItem()
+{let data= JSON.stringify(ProductsMall.all); // stringify method from obj to string
+  localStorage.setItem('Products', data);
+  //console.log(data);
+}
+function gettingItems()
+{
+  let asString= localStorage.getItem('Products');
+
+  let newObj= JSON.parse(asString);
+
+  if (newObj!==null)
+ {
+    ProductsMall.all= newObj;
+  }
+}
 for(let i =0;i<products.length;i++){
   new ProductsMall(products[i]);
 }
@@ -34,7 +50,9 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function render(){
-  //if (index.includes(leftIndex)===leftIndex)  (index.includes(rightIndex)===rightIndex)||(index.includes( midellIndex )===midellIndex)
+  //let rigthRandom= randomNumber(0,ProductsMall.all.length-1);
+  //let leftRandom= randomNumber(0,ProductsMall.all.length-1);
+  //let midllRandom= randomNumber(0,ProductsMall.all.length-1);
 
    // while((index.includes(leftIndex))||(index.includes(rightIndex))||(index.includes(midellIndex)))
    //{
@@ -47,16 +65,12 @@ function render(){
 
      //midellIndex=randomNumber(0,ProductsMall.all.length-1);
   // }
-   do{
-      leftIndex = randomNumber(0,ProductsMall.all.length-1);
-     midellIndex = randomNumber(0,ProductsMall.all.length-1);
-     rightIndex = randomNumber(0,ProductsMall.all.length-1);
+ do{
+       leftIndex = randomNumber(0,ProductsMall.all.length-1);
+      midellIndex = randomNumber(0,ProductsMall.all.length-1);
+      rightIndex = randomNumber(0,ProductsMall.all.length-1);
     }while(leftIndex===midellIndex||midellIndex===rightIndex||leftIndex===rightIndex);
     //console.log(leftIndex);
-
-
-
-
 
 
    //leftIndex = randomNumber(0,ProductsMall.all.length-1);
@@ -129,6 +143,7 @@ function handelClick(event){
         li.textContent = ProductsMall.all[j].name + '  has ' + ProductsMall.all[j].votes + ' votes and has ' + ProductsMall.all[j].views+'views' ;
       }
       imagesSection.removeEventListener('click',handelClick);
+      settingItem();
       chartDesign();
 
 
@@ -196,6 +211,7 @@ function chartDesign(){
     options: {}
   });
 }
+gettingItems();
 
 
 
